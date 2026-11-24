@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>毛小孩の家 - 寵物美容工作室</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #e07a5f;
+      --primary-light: #f4f1de;
+      --secondary: #3d405b;
+      --accent: #81b29a;
+      --accent-warm: #f2cc8f;
+      --bg: #faf7f2;
+      --card-bg: #ffffff;
+      --text: #2d3142;
+      --text-muted: #6c757d;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+      --shadow-hover: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Noto Sans TC', 'Zen Maru Gothic', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding-bottom: 60px;
+    }
+
+    /* Container */
+    .container {
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header / Hero */
+    header {
+      background: linear-gradient(135deg, #fcefe9 0%, #faede1 50%, #f4f1de 100%);
+      padding: 50px 0 40px;
+      border-bottom: 2px dashed rgba(224, 122, 95, 0.25);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .brand-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(224, 122, 95, 0.12);
+      color: var(--primary);
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+
+    .brand-title {
+      font-family: 'Zen Maru Gothic', 'Noto Sans TC', sans-serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--secondary);
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .brand-title span.paw {
+      color: var(--primary);
+      font-size: 2.4rem;
+    }
+
+    .intro-card {
+      background: var(--card-bg);
+      padding: 28px;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      margin-top: 20px;
+      border-left: 6px solid var(--primary);
+    }
+
+    .intro-lead {
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--secondary);
+      margin-bottom: 10px;
+    }
+
+    .intro-sub {
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    .tags-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .tag-item {
+      background: #f1f8f5;
+      color: #2b7050;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid rgba(129, 178, 154, 0.3);
+    }
+
+    /* Contact & Hours Info Grid */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 10px;
+    }
+
+    .info-box {
+      background: #faf9f6;
+      border: 1px solid #eee5da;
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .info-icon {
+      background: var(--primary-light);
+      color: var(--primary);
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    .info-box-content h4 {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .info-box-content p {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--secondary);
+    }
+
+    .info-box-content p a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .info-box-content p a:hover {
+      text-decoration: underline;
+    }
+
+    /* Main Sections */
+    section {
+      padding: 50px 0 20px;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .section-title {
+      font-family: 'Zen Maru Gothic', 'Noto Sans TC', sans-serif;
+      font-size: 1.85rem;
+      color: var(--secondary);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 48px;
+      height: 4px;
+      background: var(--accent-warm);
+      border-radius: 2px;
+    }
+
+    .section-subtitle {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-top: 12px;
+    }
+
+    /* Media Showcase Cards (Middle Section) */
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .media-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .media-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .card-header-bar {
+      padding: 16px 20px;
+      background: #fdfaf6;
+      border-bottom: 1px solid #f0e9df;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .card-header-bar h3 {
+      font-size: 1.15rem;
+      color: var(--secondary);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card-badge {
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: rgba(129, 178, 154, 0.18);
+      color: #2b7050;
+      font-weight: 600;
+    }
+
+    .img-wrapper {
+      position: relative;
+      background: #f8f6f2;
+      overflow: hidden;
+    }
+
+    .img-wrapper img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .img-wrapper:hover img {
+      transform: scale(1.02);
+    }
+
+    .card-caption {
+      padding: 16px 20px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-top: 1px solid #f6f1eb;
+      background: #ffffff;
+      line-height: 1.5;
+    }
+
+    /* Care Section (Bottom) */
+    .care-section {
+      margin-top: 20px;
+    }
+
+    .care-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      max-width: 860px;
+      margin: 0 auto;
+      border-top: 5px solid var(--accent);
+    }
+
+    .care-header {
+      padding: 24px 30px;
+      background: #f4fbf7;
+      border-bottom: 1px solid #e1efe7;
+      text-align: center;
+    }
+
+    .care-header h3 {
+      font-size: 1.5rem;
+      color: #264653;
+      font-weight: 700;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .care-header p {
+      color: #52796f;
+      font-size: 0.95rem;
+    }
+
+    .care-img-container {
+      padding: 20px;
+      text-align: center;
+      background: #ffffff;
+    }
+
+    .care-img-container img {
+      max-width: 100%;
+      height: auto;
+      border-radius: var(--radius-md);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 40px 20px 20px;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+
+    footer p {
+      margin-bottom: 6px;
+    }
+
+    /* Responsive Design for Mobile */
+    @media (max-width: 768px) {
+      header {
+        padding: 35px 0 30px;
+      }
+
+      .brand-title {
+        font-size: 2.1rem;
+      }
+
+      .intro-card {
+        padding: 20px;
+      }
+
+      .showcase-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .care-header {
+        padding: 20px;
+      }
+
+      .care-header h3 {
+        font-size: 1.3rem;
+      }
+
+      .care-img-container {
+        padding: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. 最上面：店名與介紹、營業時間、預約電話 -->
+  <header>
+    <div class="container">
+      <div class="brand-badge">🐾 寵物美容工作室</div>
+      <h1 class="brand-title">毛小孩の家 <span class="paw">🐾</span></h1>
+      
+      <div class="intro-card">
+        <p class="intro-lead">我們是一間開在住宅區的小型寵物美容工作室，一次只接一隻，不關籠、不趕時間。</p>
+        <p class="intro-sub">怕生、年紀大、第一次美容的毛孩，都可以慢慢來。</p>
+        
+        <div class="tags-list">
+          <span class="tag-item">🐶 服務對象：小型犬、中大型犬、貓</span>
+          <span class="tag-item">✨ 特色：一對一美容</span>
+          <span class="tag-item">📷 特色：美容過程可拍照回報給飼主</span>
+        </div>
+
+        <div class="info-grid">
+          <div class="info-box">
+            <div class="info-icon">⏰</div>
+            <div class="info-box-content">
+              <h4>營業時間</h4>
+              <p>週二到週日 10:00–19:00<br><span style="font-size: 0.9rem; color: #e07a5f; font-weight: normal;">（週一公休）</span></p>
+            </div>
+          </div>
+
+          <div class="info-box">
+            <div class="info-icon">📞</div>
+            <div class="info-box-content">
+              <h4>預約電話</h4>
+              <p><a href="tel:0900000000">0900-000-000</a></p>
+            </div>
+          </div>
+
+          <div class="info-box">
+            <div class="info-icon">💬</div>
+            <div class="info-box-content">
+              <h4>LINE 預約諮詢</h4>
+              <p><a href="#">@maoxiaohai</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- 2. 中間：價目表和作品照 -->
+    <section>
+      <div class="section-header">
+        <h2 class="section-title">服務價目與美容日常</h2>
+        <p class="section-subtitle">公開透明的服務收費，用心呵護每一位來到毛小孩の家的毛寶貝</p>
+      </div>
+
+      <div class="showcase-grid">
+        <!-- 價目表 -->
+        <div class="media-card">
+          <div class="card-header-bar">
+            <h3>📋 服務價目表</h3>
+            <span class="card-badge">PRICE LIST</span>
+          </div>
+          <div class="img-wrapper">
+            <img src="price.png" alt="毛小孩の家 價目表">
+          </div>
+          <div class="card-caption">
+            💡 收費依照毛孩體型與毛況提供最合適的美容方案，歡迎隨時透過電話或 LINE 諮詢。
+          </div>
+        </div>
+
+        <!-- 作品照 -->
+        <div class="media-card">
+          <div class="card-header-bar">
+            <h3>🐶 美容作品照</h3>
+            <span class="card-badge">PORTFOLIO</span>
+          </div>
+          <div class="img-wrapper">
+            <img src="photo.png" alt="毛小孩の家 美容作品照">
+          </div>
+          <div class="card-caption">
+            🐾 溫柔一對一洗沐修剪，讓毛孩在放鬆無壓力的氛圍中變得乾淨漂亮又舒適。
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. 下面：衛教卡（標題：美容後照護） -->
+    <section class="care-section">
+      <div class="care-card">
+        <div class="care-header">
+          <h3>🩺 美容後照護</h3>
+          <p>毛孩回家後的貼心照護指南與注意事項，守護毛寶貝的健康與好心情</p>
+        </div>
+        <div class="care-img-container">
+          <img src="care.png" alt="美容後照護衛教卡">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 毛小孩の家 寵物美容工作室 | 一對一預約制、不關籠</p>
+      <p style="font-size: 0.8rem; color: #a0aab2;">（本頁面為課堂練習示範網頁）</p>
+    </div>
+  </footer>
+
+</body>
+</html>
